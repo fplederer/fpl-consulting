@@ -10,7 +10,7 @@ function App() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'philosophy', 'profile', 'services', 'process', 'competencies', 'experience', 'contact'];
+      const sections = ['home', 'profile', 'competencies', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
@@ -119,7 +119,8 @@ function App() {
     "USA",
     "Kanada",
     "Saudi-Arabien",
-    "Katar"
+    "Katar",
+    "VAE"
   ];
 
   return (
@@ -225,10 +226,8 @@ function App() {
             <div className="hidden lg:flex items-center space-x-8">
               {[
                 { id: 'home', label: 'Home' },
-                { id: 'philosophy', label: 'Philosophie' },
                 { id: 'profile', label: 'Profil' },
-                { id: 'services', label: 'Leistungen' },
-                { id: 'competencies', label: 'Kompetenzen' },
+                { id: 'competencies', label: 'Mein Ansatz' },
                 { id: 'experience', label: 'Erfahrung' },
                 { id: 'contact', label: 'Kontakt' }
               ].map((item) => (
@@ -262,10 +261,8 @@ function App() {
             <div className="px-6 py-4 space-y-1">
               {[
                 { id: 'home', label: 'Home' },
-                { id: 'philosophy', label: 'Philosophie' },
                 { id: 'profile', label: 'Profil' },
-                { id: 'services', label: 'Leistungen' },
-                { id: 'competencies', label: 'Kompetenzen' },
+                { id: 'competencies', label: 'Mein Ansatz' },
                 { id: 'experience', label: 'Erfahrung' },
                 { id: 'contact', label: 'Kontakt' }
               ].map((item) => (
@@ -303,14 +300,8 @@ function App() {
             </p>
             
             <p className="text-xl text-neutral-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Strategischer Partner für mittelständische Unternehmen im Aerospace- und Defence-Sektor – 
+              Ihr Partner für mittelständische Unternehmen im Aerospace- und Defence-Sektor – 
               mit ausgewiesener Expertise im Mittleren Osten.
-            </p>
-            
-            <p className="text-lg text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              In einer zunehmend komplexen und geopolitisch geprägten Geschäftswelt benötigen Unternehmen 
-              mehr als Beratung: Sie benötigen fundierte Expertise, strategische Einordnung und 
-              nachgewiesene Umsetzungskompetenz.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -321,53 +312,29 @@ function App() {
                 Erstgespräch anfragen
               </button>
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => scrollToSection('profile')}
                 className="px-10 py-4 bg-white text-neutral-900 border border-neutral-300 tracking-wide hover-gold transition-all"
               >
-                Leistungsportfolio
+                Mehr erfahren
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section id="philosophy" className="py-24 px-6 lg:px-12 bg-neutral-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-xs text-gold uppercase tracking-widest mb-6">Philosophie</div>
-            <h2 className="text-4xl lg:text-5xl font-semibold text-neutral-900 mb-8">
-              Ganzheitliche Beratung bedeutet<br />mehr als die Lieferung von Lösungen
-            </h2>
-            <div className="divider w-32 mx-auto mb-10"></div>
-          </div>
-          
-          <div className="bg-white border border-neutral-200 p-12 lg:p-16">
-            <p className="text-lg text-neutral-700 leading-relaxed mb-8 text-center">
-              Meine Beratungsphilosophie fundiert auf <strong>Fachexpertise</strong>, <strong>praktischer Erfahrung</strong>, <strong>Empathie</strong> und <strong>ausgewogener Balance</strong>.
-            </p>
-            <p className="text-lg text-neutral-700 leading-relaxed text-center">
-              Jeder unternehmerischen Herausforderung liegt ein menschlicher Kontext zugrunde – 
-              nachhaltiger Erfolg entsteht ausschließlich durch das Gleichgewicht von Strategie, 
-              Organisation und Menschen.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Profile Section */}
-      <section id="profile" className="py-24 px-6 lg:px-12 bg-white">
+      <section id="profile" className="py-24 px-6 lg:px-12 bg-neutral-100">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="text-xs text-gold uppercase tracking-widest mb-6">Profil</div>
+            <div className="text-xs text-gold uppercase tracking-widest mb-6">Profil & Leistungsportfolio</div>
             <h2 className="text-4xl lg:text-5xl font-semibold text-neutral-900 mb-8">
               Senior Executive mit internationaler Expertise
             </h2>
             <div className="divider w-32 mx-auto mb-10"></div>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="text-lg text-neutral-700 leading-relaxed space-y-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-lg text-neutral-700 leading-relaxed space-y-6 mb-12">
               <p>
                 Als international erfahrener Senior Executive und Consultant verfüge ich über 
                 fundierte Expertise in den Bereichen <strong>Defence</strong>, <strong>Aerospace</strong> 
@@ -380,14 +347,13 @@ function App() {
               </p>
             </div>
             
-            <div className="bg-neutral-50 border border-neutral-200 p-10">
+            <div className="bg-white border border-neutral-200 p-10">
               <h3 className="text-xl font-semibold text-neutral-900 mb-6">
                 Kernkompetenzen im strategischen Einsatz:
               </h3>
               <ul className="space-y-4">
                 {[
                   "Strategische Geschäftsentwicklung",
-                  "Internationale Markteintrittsstrategien",
                   "Stakeholder- & Relationship-Management",
                   "Aufbau internationaler Organisationsstrukturen"
                 ].map((item, idx) => (
@@ -402,87 +368,11 @@ function App() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-24 px-6 lg:px-12 bg-neutral-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="text-xs text-gold uppercase tracking-widest mb-6">Leistungsportfolio</div>
-            <h2 className="text-4xl lg:text-5xl font-semibold text-neutral-900 mb-8">
-              Integrierte Beratungsleistungen
-            </h2>
-            <div className="divider w-32 mx-auto"></div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="service-card bg-white border border-neutral-200 p-10"
-              >
-                <div className="w-12 h-12 border border-neutral-300 flex items-center justify-center text-neutral-700 mb-6">
-                  {service.icon}
-                </div>
-                
-                <h3 className="text-xl font-semibold text-neutral-900 mb-6">
-                  {service.title}
-                </h3>
-                
-                <ul className="space-y-3">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start space-x-3">
-                      <div className="w-1 h-1 bg-gold mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-neutral-700 leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section id="process" className="py-24 px-6 lg:px-12 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="text-xs text-gold uppercase tracking-widest mb-6">Vorgehen</div>
-            <h2 className="text-4xl lg:text-5xl font-semibold text-neutral-900 mb-8">
-              Ein bewährter Beratungsprozess
-            </h2>
-            <div className="divider w-32 mx-auto mb-8"></div>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              Ein modularer, erprobter Ansatz gewährleistet Flexibilität, Effizienz und messbare Resultate. 
-              Sie arbeiten durchgehend direkt mit einem erfahrenen Senior Consultant – von der initialen 
-              Analyse bis zur erfolgreichen Implementierung und darüber hinaus.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="text-5xl font-semibold text-gold mb-6 ornament">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-neutral-600 text-sm leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Competencies Section */}
+      {/* Competencies Section - Mein Ansatz */}
       <section id="competencies" className="py-24 px-6 lg:px-12 bg-neutral-900 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <div className="text-xs text-gold uppercase tracking-widest mb-6">Kompetenzen & Werte</div>
-            <h2 className="text-4xl lg:text-5xl font-semibold mb-8">
-              Kernsäulen meiner Beratungsleistung
-            </h2>
+            <div className="text-xs text-gold uppercase tracking-widest mb-6">Mein Ansatz</div>
             <div className="divider w-32 mx-auto"></div>
           </div>
 
@@ -492,11 +382,11 @@ function App() {
                 <Award className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold mb-4">
-                Expertise & Erfahrung
+                Expertise
               </h3>
               <p className="text-neutral-400 leading-relaxed">
-                Umfassende fachliche Expertise verbunden mit jahrzehntelanger operativer Erfahrung 
-                in hochkomplexen, internationalen Geschäftsumfeldern.
+                Fachliche Expertise verbunden mit jahrzehntelanger operativer Erfahrung 
+                in komplexen, internationalen Geschäftsumfeldern.
               </p>
             </div>
 
@@ -505,57 +395,25 @@ function App() {
                 <Users className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold mb-4">
-                Balance & Empathie
+                Services
               </h3>
               <p className="text-neutral-400 leading-relaxed">
-                Erfolgreiche Projekte basieren auf Vertrauen. Empathie bildet das Fundament 
-                effektiver Kommunikation und nachhaltiger, partnerschaftlicher Zusammenarbeit.
+                Aktive Mitarbeit bei der Umsetzung von Projekten im In- und Ausland. 
+                Präsenz während der Projektabwicklung vor Ort ist mein Anspruch.
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 border border-gold mx-auto flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-gold" />
+                <Globe className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold mb-4">
-                Executive Mentoring
-              </h3>
-              <p className="text-neutral-400 leading-relaxed mb-6">
-                Ganzheitliches Mentoring zur strategischen Weiterentwicklung von Führungskräften 
-                und Organisationen.
-              </p>
-              <ul className="text-sm text-neutral-400 space-y-2 text-left max-w-xs mx-auto">
-                <li className="flex items-start space-x-2">
-                  <span className="text-gold">·</span>
-                  <span>Entwicklung von Führungskompetenzen</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="text-gold">·</span>
-                  <span>Bewältigung komplexer strategischer Herausforderungen</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="text-gold">·</span>
-                  <span>Transformation auf persönlicher, organisatorischer und geschäftlicher Ebene</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-16 pt-16 border-t border-neutral-800">
-            <div className="bg-neutral-800 border border-neutral-700 p-10 text-center">
-              <Globe className="w-12 h-12 text-gold mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold mb-4">
                 Länder- & Marktexpertise Mittlerer Osten
               </h3>
-              <p className="text-neutral-300 leading-relaxed max-w-3xl mx-auto mb-6">
-                Der Mittlere Osten bietet signifikante Wachstumschancen – deren Realisierung 
-                jedoch fundiertes Verständnis voraussetzt. Ich biete aktuelle, belastbare Länder- 
-                und Marktinformationen sowie strategische Einordnung kultureller, wirtschaftlicher 
-                und politischer Rahmenbedingungen.
-              </p>
-              <p className="text-neutral-400 text-sm">
-                Interkulturelle Kompetenz bildet den Schlüssel zu nachhaltigen Partnerschaften 
-                und erfolgreicher grenzüberschreitender Zusammenarbeit.
+              <p className="text-neutral-400 leading-relaxed">
+                Ich biete aktuelle Länderinformationen sowie strategische Einordnung kultureller 
+                und wirtschaftlicher Rahmenbedingungen. Interkulturelle Kompetenz bildet den Schlüssel 
+                zu nachhaltigen Partnerschaften und erfolgreicher grenzüberschreitender Zusammenarbeit.
               </p>
             </div>
           </div>
@@ -746,7 +604,7 @@ function App() {
             <div>
               <h3 className="text-sm uppercase tracking-wide mb-4">Navigation</h3>
               <ul className="space-y-2 text-sm">
-                {['Philosophie', 'Profil', 'Leistungen', 'Kompetenzen', 'Erfahrung', 'Kontakt'].map((item) => (
+                {['Profil', 'Mein Ansatz', 'Erfahrung', 'Kontakt'].map((item) => (
                   <li key={item}>
                     <button className="text-neutral-400 hover:text-white transition-colors">
                       {item}
